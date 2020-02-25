@@ -33,11 +33,11 @@ steps:
         echo "Dockerfile is not present and neither is a required dockerfile.json"
         exit 1
       fi
+  - powershell: |
+          Write-Host "Registry: ${{ parameters.registry }}"
     displayName: Check for Dockerfile
   - task: Docker@1
     displayName: Build image
-  - powershell: |
-          Write-Host "Registry: ${{ parameters.registry }}"
     inputs:
       command: build
       azureSubscriptionEndpoint: ${{ parameters.containerServiceEndpoint }}
