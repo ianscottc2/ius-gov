@@ -1,6 +1,6 @@
 parameters:
   containerServiceEndpoint: 'iUSDevContainer'
-  registry: 'iusdev.azurecr.io'
+  registry: 'foo.azurecr.io'
   project: ''
   helmChartLocation: 'application/helm'
   helmChartName: ''
