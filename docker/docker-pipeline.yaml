@@ -14,6 +14,7 @@ parameters:
   stateCode: 0
 
 steps:
+ 
   - task: Docker@1
     displayName: Container registry login
     inputs:
@@ -35,6 +36,8 @@ steps:
     displayName: Check for Dockerfile
   - task: Docker@1
     displayName: Build image
+  - powershell: |
+          Write-Host "Registry: ${{ parameters.registry }}"
     inputs:
       command: build
       azureSubscriptionEndpoint: ${{ parameters.containerServiceEndpoint }}
