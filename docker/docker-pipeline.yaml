@@ -34,7 +34,7 @@ steps:
         exit 1
       fi
   - powershell: |
-          Write-Host "Registry: ${{ parameters.registry }}"
+          Write-Host "Registry: ${{ parameters.registry }}, azureSubscriptionEndpoint: ${{ parameters.containerServiceEndpoint }},  imageName: ${{ parameters.project }}"
     displayName: Check for Dockerfile
   - task: Docker@1
     displayName: Build image
